@@ -4,16 +4,17 @@
 
 using namespace std;
 
-int binarySearch(vector< pair<int, int> > a, int x, int low, int high) {
+int binarySearch(vector< pair<int, int> > a, int x, int low, int high) {    
+    // mid, low and high represent indices after sorting
     while(low <= high) {
         int mid = (low + high)/2;
 
-        if(x == a[mid].first)     // Element found at index mid
+        if(x == a[mid].first)     // Element found at index mid 
             return a[mid].second + 1;
 
         else if(x < a[mid].first) // Element has value lower than that at mid
             high = mid - 1;
-            
+
         else    // Element has value greater than that at mid
             low = mid + 1;
     }

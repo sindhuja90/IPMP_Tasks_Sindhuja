@@ -1,3 +1,4 @@
+// solution 1
 class Solution {
 public:
     int pivotSearch(vector<int>& nums, int target, int f, int l) {
@@ -24,5 +25,17 @@ public:
     int search(vector<int>& nums, int target) {
         int n=nums.size();
         return pivotSearch(nums, target, 0, n-1);
+    }
+};
+
+// solution 2
+class Solution {
+public:
+    int search(vector<int>& nums, int target) {
+        int n = nums.size();
+        for(int i=0; i<n; i++)
+            if(nums[i] == target)
+                return i;
+        return -1;
     }
 };
